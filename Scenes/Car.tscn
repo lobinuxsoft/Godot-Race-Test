@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Cars/Caterham.gltf" type="PackedScene" id=1]
+
+[sub_resource type="BoxShape" id=1]
+
+extents = Vector3( 0.464292, 0.505481, 1 )
+
+[node name="Car" instance=ExtResource( 1 )]
+mass = 58.6735
+
+[node name="left_front" parent="." index="0"]
+transform = Transform( 1, 0, 0, 0, 1, -1.31134e-07, 0, 1.31134e-07, 1, 0.853853, 0.318476, 1.27463 )
+use_as_steering = true
+wheel_radius = 0.32
+wheel_rest_length = 0.07
+suspension_travel = 0.07
+suspension_stiffness = 70.0
+damping_compression = 0.5
+damping_relaxation = 0.8
+
+[node name="left_front" parent="left_front" index="0"]
+transform = Transform( 0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, 0, 0, 0 )
+
+[node name="right_front" parent="." index="1"]
+transform = Transform( 1, 0, 0, 0, 1, -1.31134e-07, 0, 1.31134e-07, 1, -0.856466, 0.318476, 1.27463 )
+use_as_steering = true
+wheel_radius = 0.32
+wheel_rest_length = 0.07
+suspension_travel = 0.07
+suspension_stiffness = 70.0
+damping_compression = 0.5
+damping_relaxation = 0.8
+
+[node name="right_front" parent="right_front" index="0"]
+transform = Transform( 0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, 0, 0, 0 )
+
+[node name="right_rear" parent="." index="2"]
+transform = Transform( 1, 0, 0, 0, 1, -1.31134e-07, 0, 1.31134e-07, 1, -0.931563, 0.318477, -1.25496 )
+use_as_steering = true
+wheel_radius = 0.32
+wheel_rest_length = 0.07
+suspension_travel = 0.07
+suspension_stiffness = 70.0
+damping_compression = 0.5
+damping_relaxation = 0.8
+
+[node name="right_rear" parent="right_rear" index="0"]
+transform = Transform( 0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, 0, 0, 0 )
+
+[node name="left_rear" parent="." index="3"]
+transform = Transform( 1, 0, 0, 0, 1, -1.31134e-07, 0, 1.31134e-07, 1, 0.933848, 0.318477, -1.25496 )
+use_as_steering = true
+wheel_radius = 0.32
+wheel_rest_length = 0.07
+suspension_travel = 0.07
+suspension_stiffness = 70.0
+damping_compression = 0.5
+damping_relaxation = 0.8
+
+[node name="left_rear" parent="left_rear" index="0"]
+transform = Transform( 0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="." index="10"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.661199, 0 )
+shape = SubResource( 1 )
+
